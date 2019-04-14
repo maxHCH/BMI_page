@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BMI_HW</title>
+    <link rel="stylesheet" href="./scss/all.css">
+
+</head>
+
+<body>
+    <header class="header ">
+        <div class="bg-dark">
+            <div class="container d-flex justify-content-around py-5 align-items-center">
+                <div>
+                    <img src="./img/BMICLogo.png" alt="">
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="cmInput" class="text-cream">身高 cm</label>
+                        <input type="text" class="form-control bmiInput bg-dark" id="cmInput" placeholder="請輸入身高">
+                    </div>
+                    <div class="form-group">
+                        <label for="kgInput" class="text-cream">體重 kg</label>
+                        <input type="text" class="form-control bmiInput bg-dark" id="kgInput" placeholder="請輸入體重">
+                    </div>
+                </form>
+                <div class="bmiCal ">
+                    <button type="button" class="btn btn-cream btn-circle " data-toggle="bmiRg">
+                        看結果
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="bg-light py-5 h-100">
+        <div class="section container">
+            <div class="row justify-content-center">
+                <div class="col-8 text-center">
+                    <h4 class="text-center text-dark mb-4">BMI 紀錄</h4>
+                    <ul class="showBmi"></ul>
+                    <a href="#" class="clearData text-danger">清除歷史記錄</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-cream">
+        <div class="text-center py-4 text-secondary">
+            <p>天天量一次健康遠離你</p>
+            <p>BMI看自己</p>
+        </div>
+    </footer>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>
