@@ -72,7 +72,7 @@ function recodeBmi(items) { //items = showdata
     var today = new Date();
     var len = items.length;
     for (var i = 0; len > i; i++) {
-        str += '<li class="d-flex justify-content-around align-items-center py-3 bg-white mb-3"><span>' + items[i].yourClass + '</span><span><span class="items mr-2">BMI</span>' + items[i].youBmi + '</span><span><span class="items mr-2">weight</span>' + items[i].youKg + '</span><span><span class="items mr-2">height</span>' + items[i].you + '</span><span class="items">'+today.getFullYear()+'/'+today.getMonth()+'/'+today.getDate()+'</span></li>';
+        str += '<div class="row d-flex align-items-center py-3 bg-white mb-3"><div class="col-lg-1"></div><div class="col-lg-3">' + items[i].yourClass + '</div><div class="col-lg-2 col-4"><span class="items mr-2">BMI</span>' + items[i].youBmi + '</div><div class="col-lg-2 col-4"><span class="items mr-2">weight</span>' + items[i].youKg + '<span class="items">kg</span></div><div class="col-lg-2 col-4"><span class="items mr-2">height</span>' + items[i].you + '<span class="items">cm</span></div><div class="items col-lg-2">'+today.getFullYear()+'/'+today.getMonth()+'/'+today.getDate()+'</div></div>';
     }
     showBmi.innerHTML = str;
 }
