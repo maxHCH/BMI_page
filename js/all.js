@@ -1,10 +1,10 @@
-var bmi = document.querySelector('.bmiInput');
-var cal = document.querySelector('.bmiCal');
-var cmInput = document.getElementById('cmInput');
-var kgInput = document.getElementById('kgInput');
-var showBmi = document.querySelector('.showBmi');
-var clearData = document.querySelector('.clearData');
-var showData = JSON.parse(localStorage.getItem('bmiData')) || [];
+const bmi = document.querySelector('.bmiInput');
+const cal = document.querySelector('.bmiCal');
+const cmInput = document.getElementById('cmInput');
+const kgInput = document.getElementById('kgInput');
+const showBmi = document.querySelector('.showBmi');
+const clearData = document.querySelector('.clearData');
+const showData = JSON.parse(localStorage.getItem('bmiData')) || [];
 
 recodeBmi(showData);
 
@@ -13,9 +13,9 @@ clearData.addEventListener('click',clear);
 
 
 function bmiCal(e) {
-    var cm = (cmInput.value);
-    var kg = kgInput.value;
-    var str = '';
+    let cm = (cmInput.value);
+    let kg = kgInput.value;
+    let str = '';
     //判斷是否為正確數值
     if(isNaN(cm) || isNaN(kg)){
         alert('請輸入正確數字');
@@ -23,8 +23,8 @@ function bmiCal(e) {
     }else {
         str = (kg/(cm*cm/10000)).toFixed(2);
     }
-    var bmiClass = '';
-    var bmiRg = '';
+    let bmiClass = '';
+    let bmiRg = '';
     if(str < 18.5){
         bmiClass = '過輕';
         bmiRg = '<button type="button" class="btn btn-circle-feather " data-toggle="bmiRg" >'+str+'<p style="font-size:8px; margin-bottom:-5px;">BMI</p></button><div class="text-feather h5 text-center pt-2">'+bmiClass+'</div><a href="#" id="resetimg" style="background-color: #31BAF9;"></a>'
@@ -55,7 +55,7 @@ function bmiCal(e) {
             window.location.reload();
         }
     }
-    var save = {
+    let save = {
         you : cm ,
         youKg : kg ,
         youBmi : str,
@@ -69,9 +69,9 @@ function bmiCal(e) {
 
 function recodeBmi(items) { //items = showdata
     str = '';
-    var today = new Date();
-    var len = items.length;
-    for (var i = 0; len > i; i++) {
+    let today = new Date();
+    let len = items.length;
+    for (let i = 0; len > i; i++) {
         str += '<div class="row d-flex align-items-center py-3 bg-white mb-3"><div class="col-lg-1"></div><div class="col-lg-3">' + items[i].yourClass + '</div><div class="col-lg-2 col-4"><span class="items mr-2">BMI</span>' + items[i].youBmi + '</div><div class="col-lg-2 col-4"><span class="items mr-2">weight</span>' + items[i].youKg + '<span class="items">kg</span></div><div class="col-lg-2 col-4"><span class="items mr-2">height</span>' + items[i].you + '<span class="items">cm</span></div><div class="items col-lg-2">'+today.getFullYear()+'/'+today.getMonth()+'/'+today.getDate()+'</div></div>';
     }
     showBmi.innerHTML = str;
@@ -79,7 +79,7 @@ function recodeBmi(items) { //items = showdata
 
 //清除記錄
 function clear(e){
-    var len = showData.length;
+    let len = showData.length;
     showData.splice(0,len);
     localStorage.setItem('bmiData', JSON.stringify(showData));
     recodeBmi(showData);
